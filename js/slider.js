@@ -24,9 +24,10 @@
 
 	var slider = {
 
-		obj: $('.container'),
+		obj: $('.bg'),
 		imgs: ['images/img1.jpg',	'images/img2.jpg',	'images/img3.jpg'],
 		selected: 0,
+		speed: 350,
 
 		load:function() 
 		{
@@ -67,21 +68,29 @@
 
 		show:function(e)
 		{
-			//bullets
-			$('a[data-id]').removeClass('selected');
-			$('a[data-id="'+e+'"]').removeClass('released').addClass('selected');
-
 			//bg
 			$(this.obj).animate({
 
 				opacity: 0,
 
-				}, 500, function() {
+				}, this.speed, function() {
 
-				$(this).css('background', 'url('+slider.imgs[e]+') 50%');
-				$(this).css('backgroundSize', 'cover');
+					$(this).css('background', 'url('+slider.imgs[e]+') 50%');
+					$(this).css('backgroundSize', 'cover');
 
-			}).animate({opacity: 1}, 500);
+			}).animate({opacity: 1}, this.speed);
+
+			//bullets
+			$('a[data-id="'+this.selected+'"]').animate({
+
+				opacity: 0.5,
+
+				}, this.speed, function() {
+
+					$(this).removeClass('selected');
+					$('a[data-id="'+e+'"]').removeClass('released').addClass('selected');
+				
+			}).animate({opacity: 1}, this.speed);
 
 			//refresh selected
 			this.selected = e;
