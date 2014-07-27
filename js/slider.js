@@ -1,21 +1,24 @@
 	$(document).ready(function() {
 
 		//bullets
-		$('a[data-id]').click(function() {
+		$('a[data-id]').click(function(e) {
 
+			e.preventDefault();
 			var id = parseInt($(this).attr('data-id'));
 			slider.show(id);
 		})
 
 		//arrows
-		$('.left').click(function() {
+		$('.left').click(function(e) {
 
+			e.preventDefault();
 			slider.prev();
 
 		});
 
-		$('.right').click(function() {
+		$('.right').click(function(e) {
 
+			e.preventDefault();
 			slider.next();
 
 		});
@@ -77,6 +80,7 @@
 
 					$(this).css('background', 'url('+slider.imgs[e]+') 50%');
 					$(this).css('backgroundSize', 'cover');
+					$(this).css('backgroundPosition', '0 35px');
 
 			}).animate({opacity: 1}, this.speed);
 
