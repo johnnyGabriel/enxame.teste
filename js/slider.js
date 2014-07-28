@@ -78,9 +78,7 @@
 
 				}, this.speed, function() {
 
-					$(this).css('background', 'url('+slider.imgs[e]+') 50%');
-					$(this).css('backgroundSize', 'cover');
-					$(this).css('backgroundPosition', '0 35px');
+					$(this).css('background', 'url('+slider.imgs[e]+') no-repeat 50% 35px / cover');
 
 			}).animate({opacity: 1}, this.speed);
 

@@ -11,10 +11,7 @@ body
 	position: fixed;
 	width: 100%;
 	height: 100%;
-	background: url('../images/img1.jpg') no-repeat 50%;
-	background-attachment: fixed;
-	background-size: cover;
-	background-position-y: 35px;
+	background: url('../images/img1.jpg') no-repeat 50% 35px / cover;
 }
 
 .container
@@ -149,10 +146,9 @@ body
 
 .container .content .destaques
 {
-	/*display: none;*/
+	display: none;
 	position: relative;
 	top: 420px;
-	/*left: -100%;*/
 	width: 100%;
 	height: 370px;
 	background-color: #FFF;

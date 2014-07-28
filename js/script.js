@@ -4,6 +4,7 @@ $(document).ready(function() {
 	{
 
 		e.preventDefault();
+		$('.destaques').fadeOut(200);
 		$('html, body').animate({scrollTop: 0}, 500);
 
 	});
@@ -12,7 +13,8 @@ $(document).ready(function() {
 	{
 
 		e.preventDefault();
-		$('html, body').animate({scrollTop: 340}, 500);
+		$('.destaques').fadeIn(200);
+		$('html, body').animate({scrollTop: 380}, 500);
 
 	});
 
